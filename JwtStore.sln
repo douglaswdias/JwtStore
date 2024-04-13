@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JtwStore.Api", "JtwStore.Api\JtwStore.Api.csproj", "{6617C44A-530A-4B54-BDC2-12DEC98FCB00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JtwStore.core", "JtwStore.Core\JtwStore.core.csproj", "{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JtwStore.Infra", "JtwStore.Infra\JtwStore.Infra.csproj", "{909DACB1-7478-4290-82ED-03C12C4232E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6617C44A-530A-4B54-BDC2-12DEC98FCB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6617C44A-530A-4B54-BDC2-12DEC98FCB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6617C44A-530A-4B54-BDC2-12DEC98FCB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6617C44A-530A-4B54-BDC2-12DEC98FCB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909DACB1-7478-4290-82ED-03C12C4232E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909DACB1-7478-4290-82ED-03C12C4232E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909DACB1-7478-4290-82ED-03C12C4232E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909DACB1-7478-4290-82ED-03C12C4232E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
