@@ -1,8 +1,42 @@
-﻿using JtwStore.core.SharedContext.Entities;
+﻿using JtwStore.core.AccountContext.ValueObjects;
+using JwtStore.core.AccountContext.ValueObjects;
+using JwtStore.core.SharedContext.Entities;
 
-namespace JtwStore.core.AccountContext.Entities;
+namespace JwtStore.core.AccountContext.Entities;
 
 public class User : Entity
 {
-    public Email Email { get; set; }
+    protected User()
+    {
+
+    }
+    public User(string email, string? password = null)
+    {
+        Email = email;
+        Password = new Password(password);
+    }
+    public string Name { get; private set; } = string.Empty;
+    public Email Email { get; private set; } = null!;
+    public Password Password { get; private set; } = null!;
+    public string Image { get; private set; } = string.Empty;
+
+    public void UpdatePassword(string plainTextPassword, string code)
+    {
+        if (!string.Equals(code.Trim(), Password.ResetCode.Trim(), StringComparison.CurrentCultureIgnoreCase))
+            throw new Exception("Codigo de restauração invalido");
+
+        var password = new Password(plainTextPassword);
+        Password = password;
+    }
+
+    public void UpdateEmail(Email email)
+    {
+        Email = email;
+    }
+
+    public void ChangePassword(string plainTextPassword)
+    {
+        var password = new Password(plainTextPassword);
+        Password = password;
+    }
 }

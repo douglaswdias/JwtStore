@@ -1,4 +1,4 @@
-﻿namespace JtwStore.core.SharedContext.ValueObjects;
+﻿namespace JwtStore.core.SharedContext.ValueObjects;
 
 public abstract class ValueObject
 {
