@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace JwtStore.core.SharedContext.Extensions;
+namespace JtwStore.core.Contexts.SharedContext.Extensions;
 
 public static class StringExtension
 {

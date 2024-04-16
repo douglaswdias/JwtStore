@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtStore.Api", "JtwStore.Api\JwtStore.Api.csproj", "{6617C44A-530A-4B54-BDC2-12DEC98FCB00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JtwStore.Api", "JtwStore.Api\JtwStore.Api.csproj", "{6617C44A-530A-4B54-BDC2-12DEC98FCB00}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtStore.core", "JtwStore.Core\JwtStore.core.csproj", "{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JtwStore.core", "JtwStore.Core\JtwStore.core.csproj", "{C9B14229-43A9-4FCC-BD4F-861B21D9E82E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtStore.Infra", "JtwStore.Infra\JwtStore.Infra.csproj", "{909DACB1-7478-4290-82ED-03C12C4232E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JtwStore.Infra", "JtwStore.Infra\JtwStore.Infra.csproj", "{909DACB1-7478-4290-82ED-03C12C4232E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
-﻿using JwtStore.core.AccountContext.Entities;
+﻿using JtwStore.core.Contexts.AccountContext.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace JwtStore.Infra.AccountContext.Mappings;
+namespace JtwStore.Infra.Contexts.AccountContext.Mappings;
 
 public class UserMap : IEntityTypeConfiguration<User>
 {
@@ -27,17 +27,25 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.OwnsOne(x => x.Email)
             .Property(x => x.Address)
             .HasColumnName("Email")
+            .HasMaxLength(120)
             .IsRequired(true);
 
         builder.OwnsOne(x => x.Email)
             .OwnsOne(x => x.Verification)
             .Property(x => x.Code)
             .HasColumnName("EmailVerificationCode")
+            .HasMaxLength(120)
             .IsRequired(false);
 
         builder.OwnsOne(x => x.Email)
             .OwnsOne(x => x.Verification)
             .Property(x => x.ExpiresAt)
+            .HasColumnName("EmailVerificationExpiresAt")
+            .IsRequired(false);
+
+        builder.OwnsOne(x => x.Email)
+            .OwnsOne(x => x.Verification)
+            .Property(x => x.VerifiedAt)
             .HasColumnName("EmailVerificationVerifiedAt")
             .IsRequired(false);
 
@@ -48,11 +56,13 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.OwnsOne(x => x.Password)
             .Property(x => x.Hash)
             .HasColumnName("PasswordHash")
+            .HasMaxLength(120)
             .IsRequired(true);
 
         builder.OwnsOne(x => x.Password)
             .Property(x => x.ResetCode)
             .HasColumnName("passwordResetCode")
+            .HasMaxLength(120)
             .IsRequired(true);
     }
 }

@@ -1,9 +1,8 @@
-﻿using JwtStore.core.AccountContext.ValueObjects;
-using JwtStore.core.SharedContext.Extensions;
-using JwtStore.core.SharedContext.ValueObjects;
+﻿using JtwStore.core.Contexts.SharedContext.Extensions;
+using JtwStore.core.Contexts.SharedContext.ValueObjects;
 using System.Text.RegularExpressions;
 
-namespace JtwStore.core.AccountContext.ValueObjects;
+namespace JtwStore.core.Contexts.AccountContext.ValueObjects;
 
 public partial class Email : ValueObject
 {

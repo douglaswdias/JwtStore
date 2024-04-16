@@ -1,6 +1,6 @@
-﻿using JwtStore.core.SharedContext.ValueObjects;
+﻿using JtwStore.core.Contexts.SharedContext.ValueObjects;
 
-namespace JwtStore.core.AccountContext.ValueObjects;
+namespace JtwStore.core.Contexts.AccountContext.ValueObjects;
 
 public class Verification : ValueObject
 {
