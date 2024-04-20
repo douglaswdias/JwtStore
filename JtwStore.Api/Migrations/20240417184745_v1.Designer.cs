@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JtwStore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240415180653_V1")]
-    partial class V1
+    [Migration("20240417184745_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace JtwStore.Api.Migrations
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("NVARCHAR")
+                        .HasColumnType("VARCHAR")
                         .HasColumnName("Image");
 
                     b.Property<string>("Name")
@@ -57,8 +57,7 @@ namespace JtwStore.Api.Migrations
 
                             b1.Property<string>("Address")
                                 .IsRequired()
-                                .HasMaxLength(120)
-                                .HasColumnType("nvarchar(120)")
+                                .HasColumnType("nvarchar(max)")
                                 .HasColumnName("Email");
 
                             b1.HasKey("UserId");
@@ -74,8 +73,8 @@ namespace JtwStore.Api.Migrations
                                         .HasColumnType("uniqueidentifier");
 
                                     b2.Property<string>("Code")
-                                        .HasMaxLength(120)
-                                        .HasColumnType("nvarchar(120)")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)")
                                         .HasColumnName("EmailVerificationCode");
 
                                     b2.Property<DateTime?>("ExpiresAt")
@@ -105,15 +104,13 @@ namespace JtwStore.Api.Migrations
 
                             b1.Property<string>("Hash")
                                 .IsRequired()
-                                .HasMaxLength(120)
-                                .HasColumnType("nvarchar(120)")
+                                .HasColumnType("nvarchar(max)")
                                 .HasColumnName("PasswordHash");
 
                             b1.Property<string>("ResetCode")
                                 .IsRequired()
-                                .HasMaxLength(120)
-                                .HasColumnType("nvarchar(120)")
-                                .HasColumnName("passwordResetCode");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("PasswordResetCode");
 
                             b1.HasKey("UserId");
 

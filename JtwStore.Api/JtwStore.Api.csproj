@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
     <ProjectReference Include="..\jtwStore.Core\JtwStore.core.csproj" />
@@ -21,6 +21,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4ec4a486-c099-494d-8f0f-708ffd68f61f</UserSecretsId>
   </PropertyGroup>
 
 </Project>

@@ -1,10 +1,11 @@
 ﻿using JtwStore.core.Contexts.AccountContext.Entities;
 using JtwStore.core.Contexts.AccountContext.UseCases.Create.Contracts;
 using JtwStore.core.Contexts.AccountContext.ValueObjects;
+using MediatR;
 
 namespace JtwStore.core.Contexts.AccountContext.UseCases.Create;
 
-public class Handler
+public class Handler : IRequestHandler<Request, Response>
 {
     private readonly IRepository _repository;
     private readonly IService _service;
@@ -52,11 +53,11 @@ public class Handler
         {
             var exists = await _repository.AnyAsync(request.Email, cancelationToken);
             if (exists)
-                return new Response("Email ja existe", 400);
+                return new Response("Este E-mail já está em uso", 400);
         }
         catch
         {
-            return new Response("Falha ao verificar email", 500);
+            return new Response("Falha ao verificar E-mail cadastrado", 500);
         }
         #endregion
 

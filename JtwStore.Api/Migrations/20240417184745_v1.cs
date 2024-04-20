@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JtwStore.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class V1 : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,13 +17,13 @@ namespace JtwStore.Api.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "NVARCHAR(120)", maxLength: 120, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
-                    EmailVerificationCode = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmailVerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmailVerificationExpiresAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EmailVerificationVerifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    PasswordHash = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
-                    passwordResetCode = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
-                    Image = table.Column<string>(type: "NVARCHAR(255)", maxLength: 255, nullable: false)
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordResetCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "VARCHAR(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {

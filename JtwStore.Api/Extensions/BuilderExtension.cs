@@ -20,6 +20,15 @@ public static class BuilderExtension
             builder.Configuration.GetSection("Secrets").GetValue<string>("JwtPrivateKey") ?? string.Empty;
         Configuration.Secrets.PasswordSaltKey = 
             builder.Configuration.GetSection("Secrets").GetValue<string>("PasswordSaltKey") ?? string.Empty;
+
+        Configuration.Smtp.Host =
+            builder.Configuration.GetSection("Secrets").GetValue<string>("Host") ?? string.Empty;
+        Configuration.Smtp.Port =
+            builder.Configuration.GetSection("Secrets").GetValue<int>("Port");
+        Configuration.Smtp.UserName =
+            builder.Configuration.GetSection("Secrets").GetValue<string>("UserName") ?? string.Empty;
+        Configuration.Smtp.Password =
+            builder.Configuration.GetSection("Secrets").GetValue<string>("Password") ?? string.Empty;
     }
 
     public static void AddDatabase(this WebApplicationBuilder builder)
@@ -47,6 +56,11 @@ public static class BuilderExtension
                 ValidateAudience = false,
             };
         });
-        
+        builder.Services.AddAuthorization();
+    }
+
+    public static void AddMediator(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(Configuration).Assembly));
     }
 }
