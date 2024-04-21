@@ -14,7 +14,7 @@ public class Repository : IRepository
         _context = context;
     }
     public async Task<bool> AnyAsync(string email, CancellationToken cancellationToken)
-        => await _context.Users.AsNoTracking().Include(x => x.Roles).AnyAsync(x => x.Email.Address == email, cancellationToken: cancellationToken);
+        => await _context.Users.AsNoTracking().AnyAsync(x => x.Email.Address == email, cancellationToken: cancellationToken);
 
     public async Task SaveAsync(User user, CancellationToken cancellationToken)
     {

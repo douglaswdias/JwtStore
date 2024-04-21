@@ -12,6 +12,6 @@ public class Repository : IRepository
 
     public async Task<User?> GetUserByEMailAsync(string email, CancellationToken cancellationToken)
     {
-        return await _context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email.Address == email, cancellationToken);
+        return await _context.Users.AsNoTracking().Include(x => x.Roles).FirstOrDefaultAsync(x => x.Email.Address == email, cancellationToken);
     }
 }
