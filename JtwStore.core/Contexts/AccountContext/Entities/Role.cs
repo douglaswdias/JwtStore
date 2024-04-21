@@ -5,5 +5,5 @@ namespace JtwStore.core.Contexts.AccountContext.Entities;
 public class Role : Entity
 {
     public string Name { get; set; } = string.Empty;
-    public IEnumerable<User> Users { get; set; } = [];
+    public List<User> Users { get; set; } = [];
 }
