@@ -48,9 +48,14 @@ public static class AccountContextExtension
                 JtwStore.core.Contexts.AccountContext.UseCases.Authenticate.Response> handler) =>
         {
             var result = await handler.Handle(request, new CancellationToken());
-            return result.IsSuccess
-                ? Results.Ok(result)
-                : Results.Json(result, statusCode: result.Status);
+            if (!result.IsSuccess)
+                return Results.Json(result, statusCode: result.Status);
+
+            if (result.Data is null)
+                return Results.Json(result.Data, statusCode: 500);
+
+            result.Data.Token = JwtExtension.Generate(result.Data);
+            return Results.Ok(result);
         });
         #endregion
     }
