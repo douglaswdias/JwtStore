@@ -53,10 +53,13 @@ public static class BuilderExtension
             {
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Secrets.JwtPrivateKey)),
                 ValidateIssuer = false,
-                ValidateAudience = false,
+                ValidateAudience = false
             };
         });
-        builder.Services.AddAuthorization();
+        builder.Services.AddAuthorizationBuilder()
+            .AddPolicy("Admin", policy => policy.RequireRole("Admin"))
+            .AddPolicy("Student", policy => policy.RequireRole("Student"))
+            .AddPolicy("Premium", policy => policy.RequireRole("Premium"));
     }
 
     public static void AddMediator(this WebApplicationBuilder builder)
